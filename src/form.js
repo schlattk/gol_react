@@ -21,10 +21,10 @@ export default class ControlForm extends React.PureComponent {
     render() {
         return(
         <form id = 'form' onClick = { this.handleClick }>
-            <input type = 'button' value = 'run'></input>
-            <input type = 'button' value = 'stop'></input>
-            <input type = 'button' value = 'random'></input>
-            <input type = 'button' value = 'make'></input>
+            <input type = 'button' className = 'run' value = 'run'></input>
+            <input type = 'button' className = 'stop' value = 'stop'></input>
+            <input type = 'button' className = 'random' value = 'random'></input>
+            <input type = 'button' className = 'make' value = 'make'></input>
          </form>
         );
     };   
