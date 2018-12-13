@@ -1,4 +1,5 @@
 import helper from './helper.js';
+
 const fieldsToCheck = (function () {
   let checkFields = function (grid, x, y) {
     let rep = helper.rep;
