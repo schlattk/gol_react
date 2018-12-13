@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SquareList has not changed appearance 1`] = `
+Array [
+  <div
+    className="square--grey"
+    onClick={[Function]}
+  />,
+  <div
+    className="square--green"
+    onClick={[Function]}
+  />,
+]
+`;
+
+exports[`SquareList has not changed appearance 2`] = `
+Array [
+  <div
+    className="square--green"
+    onClick={[Function]}
+  />,
+  <div
+    className="square--green"
+    onClick={[Function]}
+  />,
+]
+`;
