@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import helper from './helper.js';
 import ControlForm from './form';
 import Square from './square';
@@ -33,10 +32,8 @@ const extractor = (function () {
   return {extract: extract}
 })()
 
-serviceWorker.unregister();
-
 export default {extractor: extractor,
-                  printer: printer,
-                  SquareList: SquareList,
-                  Square: Square
+                printer: printer,
+                SquareList: SquareList,
+                Square: Square
                 };
