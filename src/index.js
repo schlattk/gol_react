@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import helper from './helper.js';
 import ControlForm from './form';
 import SquareList from './SquareList';
+import './index.css';
 
 window.onload = function () {
     let formElement = document.getElementById('form-element');
