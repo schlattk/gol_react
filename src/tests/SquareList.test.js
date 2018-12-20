@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import index from '../index';
+import SquareList from '../SquareList';
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<index.SquareList oxGrid ={['O','X']}/>, div);
+  ReactDOM.render(<SquareList oxGrid ={['O','X']}/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 test('SquareList has not changed appearance', () => {
   const component = renderer.create(
-    <index.SquareList oxGrid ={['O','X']}/>,
+    <SquareList oxGrid ={['O','X']}/>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -19,4 +19,3 @@ test('SquareList has not changed appearance', () => {
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-

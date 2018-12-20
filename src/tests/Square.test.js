@@ -1,14 +1,14 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import {shallow} from 'enzyme';
-import index from '../index';
+import Square from '../Square';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('ControlForm', () => {
-  let square;  
+  let square;
   beforeEach( () => {
-    square = shallow(<index.Square item={'O'} />); 
+    square = shallow(<Square item={'O'} />);
   })
   test('Square changes state after click', () => {
     expect(square.state().alive).toEqual(false);

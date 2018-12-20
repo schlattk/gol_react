@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import helper from './helper.js';
 import ControlForm from './form';
-import Square from './square';
-import SquareList from './grid';
+import SquareList from './SquareList';
 
 window.onload = function () {
     let formElement = document.getElementById('form-element');
@@ -34,6 +32,4 @@ const extractor = (function () {
 
 export default {extractor: extractor,
                 printer: printer,
-                SquareList: SquareList,
-                Square: Square
                 };

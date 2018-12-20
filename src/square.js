@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 export default class Square extends React.PureComponent {
     constructor(props) {
