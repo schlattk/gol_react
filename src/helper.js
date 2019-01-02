@@ -12,7 +12,12 @@
     };
     return finalArray;
   };
+  let flatArray = function (array) {
+    let flatArr = array.reduce((arr, val) => arr.concat(val), [])
+    return flatArr;
+  };
 
   export default {rep: rep,
-                    chunk: chunkArray
+                  chunk: chunkArray,
+                  flatten: flatArray
                   };
