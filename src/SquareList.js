@@ -3,10 +3,10 @@ import Square from './Square';
 
 export default function SquareList(props) {
     const oxGrid = props.oxGrid;
-    const listItems = oxGrid.map((item, i) => {
-        return(
-            <Square item={item} key= {i}/>
-        )
+    let counter = 0;
+    const listItems = oxGrid.map(item => {
+        counter ++;
+        return <Square item={item} key= {counter}/>
     });
     return listItems;
 };
