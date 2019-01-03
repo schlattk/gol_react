@@ -11,23 +11,21 @@ class Game {
     this.make = false;
   };
   seed (number) {
-    this.grid.forEach(item => {for(let j = 0; j < item.length; j++){
-                                item[j] = randomizer.random(number); }
-                              }
-                    );
+    let randGrid = helper.flatten(this.grid).fill('').map(x => x = randomizer.random(number));
+    this.grid = helper.chunk(randGrid, Math.pow(randGrid.length, 0.5));
   };
   move () {
     if (this.make) { this.grid = index.extractor.extract() }
     let g = this.grid;
     let len = g.length;
-    let scan_grid = new Array(len).fill(new Array(len));
-    for(let i = 0; i < len; i ++){ scan_grid[i] = new Array(len) };
-    scan_grid.forEach((item, i) => { for(let j = 0; j < len; j++){item[j] = scanner.scan(g,i,j) }});
-    g.forEach((item, i) => { item.forEach((val, j) => {
-                            let field = scan_grid[i][j];
+    let scanG = new Array(len).fill(new Array(len));
+    for(let i = 0; i < len; i ++){ scanG[i] = new Array(len) };
+    scanG.forEach((item, i) => { for(let j = 0; j < len; j++){ item[j] = scanner.scan(g, i, j) }});
+    g.forEach((item, i) => { for(let j = 0; j < len; j++){
+                            let field = scanG[i][j];
                             if(field === 3){ g[i][j] = 'X' }
-                            else if(field < 2 || field > 3){ g[i][j] = 'O'}
-                          })
+                            else if(field < 2 || field > 3){ g[i][j] = 'O' }
+                          }
                         });
     };
   print () {
