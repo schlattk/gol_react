@@ -1,14 +1,21 @@
+import React from 'react';
+import Enzyme from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import index from '../index';
+import Adapter from 'enzyme-adapter-react-16';
+import ControlForm from '../form'
+Enzyme.configure({ adapter: new Adapter() });
+
 describe('extractor', () => {
     beforeEach(function() {
-        document.body.innerHTML = 
+        document.body.innerHTML =
             '<div id = "grid">' +
             '<div class = "square--grey" width = "15" height = "15"></div>' +
             '<div class = "square--green" width = "15" height = "15"></div>' +
             '<div class = "square--grey" width = "15" height = "15"></div>' +
             '<div class = "square--green" width = "15" height = "15"></div>' +
             '</div>'
-    });
+      });
     afterEach(function() {
         document.body.innerHTML = '';
     });
