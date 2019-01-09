@@ -86,3 +86,11 @@ import index from '../index.js';
     game.move();
     expect(spy).toHaveBeenCalledTimes(1);
   });
+  test(' does not call the extractor if make is not set to true', () => {
+    spyOn(index.extractor, 'extract');
+    let spy = jest.spyOn(index.extractor, 'extract');
+    spy.mockReturnValue([['X', 'O', 'X'],['O','X', 'O'],[ 'X', 'O','X']]);
+    game = new Game(3, 3);
+    game.move();
+    expect(spy).toHaveBeenCalledTimes(0);
+  });
