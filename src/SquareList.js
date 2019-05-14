@@ -1,5 +1,5 @@
 import React from 'react';
-import Square from './Square';
+import Square from './square';
 
 export default function SquareList(props) {
     const oxGrid = props.oxGrid;
