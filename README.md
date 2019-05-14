@@ -4,7 +4,10 @@ implemented using create-react-app with REACT components for the game field
 
 - uses JS Class syntax for the game
 - uses modules for utility functions
-- uses REACT components for efficient dom updating 
+- uses REACT components for efficient dom updating
+
+clone the repo
+npm install
 
 npm start to run
 npm test to run tests
