@@ -1,9 +1,10 @@
-  let rep = function (y, length) {
+  let findField = function (y, length) {
     let result;
     if (y < 0){ result = length }
     else if (y > length){ result = 0 }
     else { result = y }
   return result
+
   };
   let chunkArray = function (array, size) {
     let finalArray = [];
@@ -12,12 +13,13 @@
     };
     return finalArray;
   };
+
   let flatArray = function (array) {
     let flatArr = array.reduce((arr, val) => arr.concat(val), [])
     return flatArr;
   };
 
-  export default {rep: rep,
+  export default {find: findField,
                   chunk: chunkArray,
                   flatten: flatArray
                   };
