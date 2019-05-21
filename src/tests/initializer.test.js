@@ -11,20 +11,20 @@ describe('Initializer', () => {
     expect(initializer.blank).toBeDefined();
   });
   it('should have called the printer function with init', () => {
-    spyOn(index.printer, 'print')
+    jest.spyOn(index.printer, 'print').mockImplementation(() => {});
     initializer.init(40,40)
-    expect(index.printer.print).toHaveBeenCalledWith(jasmine.any(Array))
+    expect(index.printer.print).toHaveBeenCalledWith(expect.any(Array))
   })
   it('should have called the printer function with move', () => {
-    spyOn(index.printer, 'print')
+    jest.spyOn(index.printer, 'print').mockImplementation(() => {});
     initializer.call()
-    expect(index.printer.print).toHaveBeenCalledWith(jasmine.any(Array))
+    expect(index.printer.print).toHaveBeenCalledWith(expect.any(Array))
   })
 });
 describe('Initializer Make facility', () => {
   it('should have called the printer function with blank', () => {
-    spyOn(index.printer, 'print')
+    jest.spyOn(index.printer, 'print').mockImplementation(() => {});
     initializer.blank(40,40)
-    expect(index.printer.print).toHaveBeenCalledWith(jasmine.any(Array))
+    expect(index.printer.print).toHaveBeenCalledWith(expect.any(Array))
   })
 });

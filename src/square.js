@@ -22,6 +22,7 @@ export default class Square extends React.PureComponent {
         }
     }
     render() {
-        return <div className = { this.state.alive ? "square--green" : "square--grey" } onClick = { this.handleClick } />;
+        return <div className = { this.state.alive ? "square--green" : "square--grey" }
+        onClick = { this.handleClick } />;
     };
 }

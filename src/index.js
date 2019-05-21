@@ -9,6 +9,7 @@ window.onload = function () {
     let formElement = document.getElementById('form-element');
     ReactDOM.render(<ControlForm />, formElement);
 };
+
 let printer = (function () {
     let print = function (oXGrid) {
         let grid = document.getElementById('grid');
@@ -16,6 +17,7 @@ let printer = (function () {
     };
     return { print: print };
 })();
+
 const extractor = (function () {
   let extract = function () {
     let grid = document.getElementById('grid');

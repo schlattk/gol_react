@@ -1,6 +1,6 @@
 import React from 'react';
 import Enzyme from 'enzyme';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import index from '../index';
 import Adapter from 'enzyme-adapter-react-16';
 import ControlForm from '../form'
@@ -12,7 +12,7 @@ describe('ControlForm', () => {
   let form;
   let button;
   beforeEach( () => {
-    spyOn(index.printer, 'print');
+    jest.spyOn(index.printer, 'print').mockImplementation(() => {});
     form = mount(<ControlForm />);
     })
   test('initial form state', () => {

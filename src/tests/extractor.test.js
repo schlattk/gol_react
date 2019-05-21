@@ -1,9 +1,6 @@
-import React from 'react';
 import Enzyme from 'enzyme';
-import {mount, shallow} from 'enzyme';
 import index from '../index';
 import Adapter from 'enzyme-adapter-react-16';
-import ControlForm from '../form'
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('extractor', () => {
@@ -24,11 +21,11 @@ describe('extractor', () => {
   });
   it('should return an array', () => {
     let list = index.extractor.extract()
-    expect(list).toEqual(jasmine.any(Array));
+    expect(list).toEqual(expect.any(Array));
   });
   it('array should have two arrays', () => {
     let list = index.extractor.extract();
-    expect(list[0]).toEqual(jasmine.any(Array));
+    expect(list[0]).toEqual(expect.any(Array));
   });
   it('array should have a length of two', () => {
     let list = index.extractor.extract();
