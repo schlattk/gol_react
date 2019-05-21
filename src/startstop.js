@@ -1,4 +1,5 @@
 import initializer from './initializer.js';
+
 const startStop = ( function () {
   let starter;
   let run = function () {

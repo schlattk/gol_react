@@ -1,5 +1,6 @@
 import initializer from '../initializer';
 import index from '../index';
+
 describe('Initializer', () => {
   it('should have an init function', () => {
     expect(initializer.init).toBeDefined();

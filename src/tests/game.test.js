@@ -78,16 +78,15 @@ import index from '../index.js';
     expect(game.grid[0][2]).toEqual('X');
   });
   test('calls the extractor if make is set to true', () => {
-    spyOn(index.extractor, 'extract');
     let spy = jest.spyOn(index.extractor, 'extract');
     spy.mockReturnValue([['X', 'O', 'X'],['O','X', 'O'],[ 'X', 'O','X']]);
     game = new Game(3, 3);
     game.make = true;
     game.move();
     expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockClear();
   });
   test(' does not call the extractor if make is not set to true', () => {
-    spyOn(index.extractor, 'extract');
     let spy = jest.spyOn(index.extractor, 'extract');
     spy.mockReturnValue([['X', 'O', 'X'],['O','X', 'O'],[ 'X', 'O','X']]);
     game = new Game(3, 3);

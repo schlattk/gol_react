@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Square extends React.PureComponent {
+export default class Square extends React.Component {
     constructor(props) {
         super(props);
             const isALive = this.props.item === 'X';

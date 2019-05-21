@@ -1,4 +1,5 @@
 import Game from './game.js';
+
 const initializer = (function () {
   let game;
   let init = function(x, y){

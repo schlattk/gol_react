@@ -2,6 +2,7 @@ import index from './index.js';
 import helper from './helper.js';
 import randomizer from './randomizer.js';
 import scanner from './scanner.js';
+
 class Game {
   constructor (height, width){
     this.height = height;
@@ -10,19 +11,19 @@ class Game {
     this.make = false;
   };
   seed (number) {
-    let randGrid = helper.flatten(this.grid).map(x => x = randomizer.random(number));
-    this.grid = helper.chunk(randGrid, Math.pow(randGrid.length, 0.5));
+    let randomGrid = helper.flatten(this.grid).map(x => x = randomizer.random(number));
+    this.grid = helper.chunk(randomGrid, Math.pow(randomGrid.length, 0.5));
   };
   move () {
-    if (this.make) { this.grid = index.extractor.extract() }
-    let g = this.grid;
-    let len = g.length;
-    let scanG = new Array(len).fill('').map(x => x = new Array(len).fill(''));
-    scanG.forEach((item, i) => { for(let j = 0; j < len; j++){ item[j] = scanner.scan(g, i, j) }});
-    g.forEach((item, i) => { for(let j = 0; j < len; j++){
-                            let field = scanG[i][j];
-                            if(field === 3){ g[i][j] = 'X' }
-                            else if(field < 2 || field > 3){ g[i][j] = 'O' }
+    if (this.make) { this.grid = index.extractor.extract() };
+    let length = this.grid.length;
+    let countAliveGrid = new Array(length).fill('').map(x => x = new Array(length).fill(''));
+    countAliveGrid.forEach((item, i) => { for(let j = 0; j < length; j++)
+                                    { item[j] = scanner.scan(this.grid, i, j) }});
+    this.grid.forEach((item, i) => { for(let j = 0; j < length; j++){
+                            // let field = countAliveGrid[i][j];
+                            if(countAliveGrid[i][j] === 3){ this.grid[i][j] = 'X' }
+                            else if( countAliveGrid[i][j] < 2 || countAliveGrid[i][j] > 3){ this.grid[i][j] = 'O' }
                           }
                         });
     };

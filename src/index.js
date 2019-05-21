@@ -21,7 +21,7 @@ let printer = (function () {
 const extractor = (function () {
   let extract = function () {
     let grid = document.getElementById('grid');
-    let extractedArray = []
+    let extractedArray = [];
     let length = grid.getElementsByTagName('div').length
     for (let i = 0; i < length; i++){
         if (grid.getElementsByTagName('div')[i].className === "square--grey")

@@ -1,5 +1,6 @@
 import Game from '../game.js'
 import fieldsToCheck from '../fieldsToCheck.js'
+
 describe('FieldsToCheck', () => {
   it('should return the correct fields example 1 top left corner => 8', () => {
     let game = new Game(5, 5);
