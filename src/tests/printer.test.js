@@ -2,7 +2,6 @@ import Game from '../game.js';
 import index from '../index.js'
 
   it('has a print function', () => {
-    jest.spyOn(index.printer, 'print').mockImplementation(() => {});
     expect(index.printer.print).toBeDefined();
   });
   it('should have been called', () => {

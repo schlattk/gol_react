@@ -21,10 +21,10 @@ class Game {
     countAliveGrid.forEach((item, i) => { for(let j = 0; j < length; j++)
                                     { item[j] = scanner.scan(this.grid, i, j) }});
     this.grid.forEach((item, i) => { for(let j = 0; j < length; j++){
-                            // let field = countAliveGrid[i][j];
                             if(countAliveGrid[i][j] === 3){ this.grid[i][j] = 'X' }
-                            else if( countAliveGrid[i][j] < 2 || countAliveGrid[i][j] > 3){ this.grid[i][j] = 'O' }
-                          }
+                            else if( countAliveGrid[i][j] < 2 || countAliveGrid[i][j] > 3)
+                            { this.grid[i][j] = 'O' }
+                            }
                         });
     };
   print () {

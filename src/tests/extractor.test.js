@@ -31,11 +31,11 @@ describe('extractor', () => {
     let list = index.extractor.extract();
     expect(list[0].length).toBe(2);
   })
-  it('array should have a length of two', () => {
+  it('the first item in the first array should be O', () => {
     let list = index.extractor.extract();
     expect(list[0][0]).toBe('O');
   });
-  it('array should have a length of two', () => {
+  it('the second item in the second array should be X', () => {
     let list = index.extractor.extract();
     expect(list[1][1]).toBe('X');
   });
