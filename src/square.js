@@ -5,7 +5,7 @@ export default class Square extends React.Component {
         super(props);
             const isALive = this.props.item === 'X';
             this.state = {
-                alive: isALive
+                alive:  isALive
             };
             this.handleClick = this.handleClick.bind(this);
     }
@@ -15,12 +15,12 @@ export default class Square extends React.Component {
         }));
     };
     componentWillReceiveProps(nextProps) {
-        if(this.props.item !== nextProps.item) {
-            this.setState({
+        //if(this.props.item !== nextProps.item) {
+            this.setState(state => ({
                 alive: nextProps.item === 'X'
-            });
-        }
-    }
+            }));
+      //  }
+    };
     render() {
         return <div className = { this.state.alive ? "square--green" : "square--grey" }
         onClick = { this.handleClick } />;
