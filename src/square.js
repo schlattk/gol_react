@@ -15,11 +15,9 @@ export default class Square extends React.Component {
         }));
     };
     componentWillReceiveProps(nextProps) {
-        //if(this.props.item !== nextProps.item) {
             this.setState(state => ({
                 alive: nextProps.item === 'X'
             }));
-      //  }
     };
     render() {
         return <div className = { this.state.alive ? "square--green" : "square--grey" }
